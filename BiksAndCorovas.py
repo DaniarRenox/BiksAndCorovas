@@ -4,6 +4,7 @@ class BiksAndCorovas():
     def __init__(self, login=''):
         if login=='':
             self.login=input("Who are you, warrior?\n")
+        else: self.login=login
         self.number_of_digits=int(input("How many IQ do you think you have?\n"))
         self.number_of_steps=0
         while self.number_of_digits>9 or self.number_of_digits<1:
@@ -13,9 +14,11 @@ class BiksAndCorovas():
         self.time=0.1
     
     def save_result(self):
-        if not os.path.exists(self.login):
-            os.mkdir(self.login)
-        with open(self.login + '/' + str(self.number_of_digits) + '.txt', 'a') as file:
+        if not os.path.exists('statistics'):
+            os.mkdir('statistics')
+        if not os.path.exists('statistics/'+self.login):
+            os.mkdir('statistics/' + self.login)
+        with open('statistics/' + self.login + '/' + str(self.number_of_digits) + '.txt', 'a') as file:
             file.write(f'{self.number_of_steps} / {self.word} / {self.time}\n')
 
     def generate_word(self, number_of_digits):

@@ -10,11 +10,10 @@ def main(login=''):
     print(f'you did it in {game.number_of_steps} steps, and it took {game.time} seconds. Do you want to save your result? y/n')
     if input()=='y':
         game.save_result()
-
     print ('do you want to show your stats on this IQ level? y/n')
 
     if input()=='y':
-        with open(game.login + '/' + str(game.number_of_digits) + '.txt', 'r') as file:
+        with open('statistics/'+ game.login + '/' + str(game.number_of_digits) + '.txt', 'r') as file:
             strings = file.readlines()
 
             sum = 0
