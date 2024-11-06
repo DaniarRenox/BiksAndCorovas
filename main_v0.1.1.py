@@ -1,5 +1,6 @@
 from BiksAndCorovas import BiksAndCorovas
 import time
+#main func
 def main(login=''):
     game=BiksAndCorovas(login)
     start_time=time.time()
