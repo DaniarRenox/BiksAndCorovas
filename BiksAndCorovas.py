@@ -34,7 +34,7 @@ class BiksAndCorovas():
         if user_guess=='im dumb':
             print(f"ok u lil cheater -__- here is the number i guessed: {self.word}")
             print("////////////////////////////////////////////////////////////////////")
-            return False
+            return True
         if len(user_guess)!=len(self.word):
             print("Error: The guess must be the same length as the word.")
             return True
