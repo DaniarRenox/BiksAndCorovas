@@ -28,8 +28,8 @@ class BiksAndCorovas():
 
     def generate_word(self, number_of_letters):
         word=''
+        local_alphabet=self.alphabet
         for i in range(number_of_letters):
-            local_alphabet=self.alphabet
             letter = random.choice(local_alphabet)
             local_alphabet=local_alphabet.replace(letter, '')
             word+=letter
@@ -45,7 +45,7 @@ class BiksAndCorovas():
             return True
         for i in user_guess:
             if not (i in self.alphabet):
-                print(f"Error: The guess can contain digits and letters till the letter {self.alphabet[-1]}.")
+                print(f"Error: The guess can contain digits and letters till the letter {self.alphabet[-1]} (including).")
                 return True
         return False
 
