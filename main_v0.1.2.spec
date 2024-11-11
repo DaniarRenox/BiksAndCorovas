@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['main_v0.1.1.py'],
+    ['main_v0.1.2.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -21,7 +21,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='main_v0.1.1',
+    name='main_v0.1.2',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -40,5 +40,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='main_v0.1.1',
+    name='main_v0.1.2',
 )
