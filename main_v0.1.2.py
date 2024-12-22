@@ -13,14 +13,13 @@ def main(login=''):
     print ('do you want to show your stats on this IQ level? y/n')
 
     if input()=='y':
-        with open('statistics/'+ game.login + '/' + str(game.number_of_digits) + '.txt', 'r') as file:
+        with open('statistics/'+ game.login + '/' + str(game.number_of_letters) + '.txt', 'r') as file:
             strings = file.readlines()
 
             sum = 0
             hardest_word=''
             hardest_word_guesses=0
             hardest_word_time = 0.1
-
             
             
             easiest_word=''
@@ -44,20 +43,20 @@ def main(login=''):
 
                 if number_of_guesses>hardest_word_guesses:
                     hardest_word_guesses=number_of_guesses
-                    hardest_word=string[word_space+3:word_space+3+game.number_of_digits:]
+                    hardest_word=string[word_space+3:word_space+3+game.number_of_letters:]
                     hardest_word_time=time_taken
                 if number_of_guesses<easiest_word_guesses:
                     easiest_word_guesses=number_of_guesses
-                    easiest_word=string[word_space+3:word_space+3+game.number_of_digits:]
+                    easiest_word=string[word_space+3:word_space+3+game.number_of_letters:]
                     easiest_word_time=time_taken
                 
                 if time_taken>longest_time:
                     longest_time=time_taken
-                    longest_time_word=string[word_space+3:word_space+3+game.number_of_digits:]
+                    longest_time_word=string[word_space+3:word_space+3+game.number_of_letters:]
                     longest_time_word_guesses=number_of_guesses
                 if time_taken<shortest_time:
                     shortest_time=time_taken
-                    shortest_time_word=string[word_space+3:word_space+3+game.number_of_digits:]
+                    shortest_time_word=string[word_space+3:word_space+3+game.number_of_letters:]
                     shortest_time_word_guesses=number_of_guesses
 
                 sum += number_of_guesses

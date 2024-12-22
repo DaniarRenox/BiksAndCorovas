@@ -23,7 +23,7 @@ class BiksAndCorovas():
             os.mkdir('statistics')
         if not os.path.exists('statistics/'+self.login):
             os.mkdir('statistics/' + self.login)
-        with open('statistics/' + self.login + '/' + str(self.number_of_digits) + '.txt', 'a') as file:
+        with open('statistics/' + self.login + '/' + str(self.number_of_letters) + '.txt', 'a') as file:
             file.write(f'{self.number_of_steps} / {self.word} / {self.time}\n')
 
     def generate_word(self, number_of_letters):
