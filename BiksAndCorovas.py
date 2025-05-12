@@ -8,13 +8,17 @@ class BiksAndCorovas():
         if login=='':
             self.login=input("Who are you, warrior?\n")
         else: self.login=login
-        self.alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'[:int(input("How many letters are in the alphabet?\n")):]
+        self.alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'[:int(input("How many letters are in the alphabet?\n NOTE: amount of letters has to be between 1 and 37\n  NOTE: set 10 for standart difficulty\n")):]
         print(f'Ok then the last letter of the alphabet is {self.alphabet[-1]}')
-        self.number_of_letters=int(input("How many IQ do you think you have?\n"))
+        self.number_of_letters=int(input("How many IQ do you think you have?\n NOTE: IQ has to be more than 1 and less than amount of letters in the alphabet\n  NOTE: set 4 for standart difficulty\n"))
         self.number_of_steps=0
-        while self.number_of_letters>35 or self.number_of_letters<1:
-            print("Error: The IQ level must be between 1 and 35.")
-            self.number_of_letters=int(input("Please try again.\n"))
+        while self.number_of_letters<1 or self.number_of_letters>len(self.alphabet):
+            print("Error: The IQ level must be more than 1 and less than amount of letters in the alphabet.\n")
+            print("Want to change amount of letters in the alphabet? y/n\n")
+            if input()=='y':
+                self.alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'[:int(input("How many letters are in the alphabet?\n")):]
+                print(f'Ok then the last letter of the alphabet is {self.alphabet[-1]}')
+            self.number_of_letters=int(input("Input your IQ level again.\n"))
         self.word=self.generate_word(self.number_of_letters)
         self.time=0.1
     
