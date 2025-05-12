@@ -19,7 +19,11 @@ class Statistic():
 
     def show_stats(self, login):
         print("Available statistics:")
-        files = [f[:f.find(".txt"):] for f in os.listdir(f"./statistics/{login}")]
+        try:
+            files = [f[:f.find(".txt"):] for f in os.listdir(f"./statistics/{login}")]
+        except:
+            print("There is no available statistic on your profile yet")
+            return
         for file in files:
             print(file)
         print ('What statistics would you like to see? Type in alphabet length, then type number of letters in the word')

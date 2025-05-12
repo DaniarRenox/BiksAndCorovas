@@ -1,6 +1,7 @@
 import random
 import os
 class Game():
+    
     def __init__(self, login=''):
         self.set_alphabet()
         self.set_number_of_letters()
